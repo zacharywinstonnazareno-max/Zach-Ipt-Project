@@ -1,9 +1,11 @@
 package com.example.zakie;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,26 +19,29 @@ public class MainActivity extends AppCompatActivity {
 
         Button superButton1 = findViewById(R.id.superButton1);
         Button superButton2 = findViewById(R.id.superButton2);
-        Button superButton3 = findViewById(R.id.superButton3);
+        TextView superButton3 = findViewById(R.id.superButton3);
 
         superButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Profile clicked!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
 
         superButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Get Started clicked!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, GetStartedActivity.class);
+                startActivity(intent);
             }
         });
 
         superButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Chat clicked!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, ChatActivity.class);
+                startActivity(intent);
             }
         });
     }
